@@ -8,7 +8,7 @@ on:
 
 jobs:
   notify:
-    uses: OWNER/CENTRAL_REPO/.github/workflows/notify-telegram.yml@main
+    uses: holdem-lab/openclaw-telegram-github-workflows/.github/workflows/notify-telegram.yml@main
     # If you copy the reusable workflow into the same repo, use this instead:
     # uses: ./.github/workflows/notify-telegram.yml
     with:
