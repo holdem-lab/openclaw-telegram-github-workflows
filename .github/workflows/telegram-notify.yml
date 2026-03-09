@@ -8,7 +8,9 @@ on:
 
 jobs:
   notify:
-    uses: ./.github/workflows/notify-telegram.yml
+    uses: holdem-lab/openclaw-telegram-github-workflows/.github/workflows/notify-telegram.yml@main
     with:
       topic_id: "4"
-    secrets: inherit
+    secrets:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
