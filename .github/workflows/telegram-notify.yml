@@ -1,0 +1,18 @@
+name: Telegram Notify
+
+on:
+  issues:
+    types: [opened, closed, reopened]
+  pull_request:
+    types: [opened, closed, ready_for_review]
+
+jobs:
+  notify:
+    uses: OWNER/CENTRAL_REPO/.github/workflows/notify-telegram.yml@main
+    # If you copy the reusable workflow into the same repo, use this instead:
+    # uses: ./.github/workflows/notify-telegram.yml
+    with:
+      topic_id: "TOPIC_ID_FOR_THIS_REPO"
+    secrets:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
